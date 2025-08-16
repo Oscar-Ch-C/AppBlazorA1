@@ -1,0 +1,14 @@
+﻿@page "/empleado"
+@inject NavigationManager navegationManager
+<h3>EmpleadoPage</h3>
+
+<button @onclick="navegar" class="btn btn-primary">
+	Navegar a Form Empleado
+</button>
+
+@code {
+	private void navegar()
+	{
+		navegationManager.NavigateTo("/formempleado");
+	}
+}
