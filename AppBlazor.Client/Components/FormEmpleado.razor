@@ -1,5 +1,6 @@
 ﻿@inject NavigationManager navigationManager
-<h3>Formulario para adicionar</h3>
+@inject EmpleadoService empleadoService
+<h3>@Nombre</h3>
 <EditForm Model="@oEmpleadoFormCLS" OnValidSubmit="@guardar">
 
 	<DataAnnotationsValidator />
@@ -79,9 +80,30 @@
 @code {
 	public EmpleadoFormCLS oEmpleadoFormCLS { get; set; } = new EmpleadoFormCLS();
 
+	[Parameter]
+	public int Num_empleado { get; set; }
+	public string Nombre { get; set; } = "";
+
+	protected override Task OnInitializedAsync()
+	{
+		if (Num_empleado == 0) Nombre = "Agregar nombre";
+		else
+		{
+			Nombre = "Editar Empleado";
+			oEmpleadoFormCLS = empleadoService.recuperarEmpleadoPorId(Num_empleado);
+		}
+
+		return base.OnInitializedAsync();
+	}
+
+
 	private void guardar()
 	{
-		Console.WriteLine("Guardando");
+		if (Nombre=="Agregar nombre")
+		{
+			empleadoService.guardarEmpleado(oEmpleadoFormCLS);
+			navigationManager.NavigateTo("empleado");
+		}
 	}
 	private void regresar()
 	{

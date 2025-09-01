@@ -7,7 +7,7 @@ namespace AppBlazor.Entities
         //Num_Empleado
         [Required(ErrorMessage ="El número de empleado es requerido")]
         [Range(1, int.MaxValue, ErrorMessage = "El número de empleado debe ser positivo")]
-        public int? Num_Empleado { get; set; }
+        public int Num_Empleado { get; set; }
         //Nombre
         [Required(ErrorMessage ="El nombre es requerido")]
         [MaxLength]

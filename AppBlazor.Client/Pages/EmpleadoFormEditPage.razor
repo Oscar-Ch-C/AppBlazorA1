@@ -1,8 +1,8 @@
 ﻿@page "/formempleado/edit/{Num_Empleado}"
-<h3>Formulario para editar representantes de ventas</h3>
-<FormEmpleado />
+
+<FormEmpleado Num_empleado="int.Parse(Num_empleado)"/>
 
 @code {
     [Parameter]
-    public string? Num_empleado { get; set; }
+    public string Num_empleado { get; set; } = null!;
 }
