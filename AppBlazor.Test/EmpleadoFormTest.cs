@@ -35,6 +35,12 @@ namespace AppBlazor.Test
             //Cargo
             Assert.Contains(errores, e => e.ErrorMessage!.Contains("El cargo es requerido"));
 
+            //Ciudad
+            Assert.Contains(errores, e => e.ErrorMessage!.Contains("Debe Seleccionar un tipo de Jefe"));
+
+            //Jefe
+            Assert.Contains(errores, e => e.ErrorMessage!.Contains("Debe Seleccionar un tipo de Ciudad"));
+
             //Fecha_de_Contrato
             Assert.Contains(errores, e => e.ErrorMessage!.Contains("La fecha de contrato es requerida"));
 
@@ -55,6 +61,7 @@ namespace AppBlazor.Test
                 Nombre = "Juan",
                 Edad = 25,
                 Cargo = "Desarrollador",
+               
                 Fecha_de_Contrato = DateTime.Now,
                 Cuota = 1000,
                 Ventas = 2000,

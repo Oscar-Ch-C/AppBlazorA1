@@ -6,7 +6,7 @@ namespace AppBlazor.Entities
     {
         //Num_Empleado
         [Required(ErrorMessage ="El número de empleado es requerido")]
-        [Range(1, int.MaxValue, ErrorMessage = "El número de empleado debe ser positivo")]
+        [Range(0, int.MaxValue, ErrorMessage = "El número de empleado debe ser positivo")]
         public int Num_Empleado { get; set; }
         //Nombre
         [Required(ErrorMessage ="El nombre es requerido")]
@@ -14,7 +14,7 @@ namespace AppBlazor.Entities
         public string Nombre { get; set; } = null!;
         //Edad
         [Range(18, int.MaxValue, ErrorMessage = "La edad debe ser mayor o igual a 18")]
-        public int? Edad { get; set; }
+        public int Edad { get; set; }
 
         //Cargo
         [Required(ErrorMessage ="El cargo es requerido")]
@@ -31,5 +31,12 @@ namespace AppBlazor.Entities
         //Ventas
         [Required(ErrorMessage ="Las ventas son requeridas")]
         public int? Ventas { get; set; }
+
+        //Jefe
+        [Range(1,int.MaxValue,ErrorMessage ="Debe Seleccionar un tipo de Jefe")]
+        public int idtipojefe { get; set; }
+        //Ciudad
+        [Range(1, int.MaxValue, ErrorMessage = "Debe Seleccionar un tipo de Ciudad")]
+        public int idtipociudad { get; set; }
     }
 }

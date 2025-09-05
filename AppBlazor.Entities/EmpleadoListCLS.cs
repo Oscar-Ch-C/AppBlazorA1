@@ -16,5 +16,8 @@ namespace AppBlazor.Entities
         public int Cuota { get; set; }
         public int Ventas { get; set; }
 
+        public string nombretipojefe { get; set; } = string.Empty;
+        public string nombretipociudad { get; set; } = string.Empty;
+
     }
 }

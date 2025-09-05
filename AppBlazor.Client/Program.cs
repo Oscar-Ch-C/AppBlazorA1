@@ -12,4 +12,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<EmpleadoService>();
 
+builder.Services.AddScoped<TipoCiudadService>();
+builder.Services.AddScoped<TipoJefeService>();
+
 await builder.Build().RunAsync();
